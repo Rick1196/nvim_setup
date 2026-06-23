@@ -36,6 +36,16 @@ On startup, `lazy.nvim` will automatically bootstrap itself and begin downloadin
 
 Once the installation finishes, exit (`:qa`) and restart Neovim to ensure everything initializes correctly.
 
+> [!IMPORTANT]
+> **Prerequisite for Neovim 0.12+ (Treesitter CLI)**:
+> Since this configuration tracks the `main` branch of `nvim-treesitter` to maintain compatibility with Neovim 0.12+, you **must** have the `tree-sitter` command-line tool installed on your system to compile language parsers.
+>
+> On macOS, install it via Homebrew:
+> ```bash
+> brew install tree-sitter-cli
+> ```
+> *(Note: Do not install `tree-sitter` via npm, and do not use the standard `tree-sitter` Homebrew formula directly as it now packages only the library; use `tree-sitter-cli` to get the executable tool).*
+
 ---
 
 ## 📂 Configuration Directory Structure
