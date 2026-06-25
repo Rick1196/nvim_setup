@@ -1,6 +1,6 @@
 return {
   "nvim-telescope/telescope.nvim",
-  branch = "0.1.x",
+  branch = "master",
   dependencies = {
     "nvim-lua/plenary.nvim",
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -10,6 +10,7 @@ return {
     telescope.setup({
       defaults = {
         path_display = { "truncate" },
+        file_ignore_patterns = { "node_modules", "%.o", "dist","target", "%.bin", "%.bin", "%.lock" },
         mappings = {
           i = {
             ["<C-j>"] = "move_selection_next",

@@ -77,6 +77,7 @@ The setup is organized into modular files located in your home config directory 
     *   **[bufferline.lua](file:///Users/ricardo/.config/nvim/lua/plugins/bufferline.lua)**: Displays open buffers as visual tabs at the top of the editor.
     *   **[markdown.lua](file:///Users/ricardo/.config/nvim/lua/plugins/markdown.lua)**: Installs render-markdown.nvim for inline rich parsing, and markdown-preview.nvim for full HTML browser preview.
     *   **[obsidian.lua](file:///Users/ricardo/.config/nvim/lua/plugins/obsidian.lua)**: Integrates Neovim with your Obsidian vault at ~/Documents/my_brain.
+*   **[dotnet.lua](file:///Users/ricardo/.config/nvim/lua/plugins/dotnet.lua)**: Configures `seblyng/roslyn.nvim`, `tris203/rzls.nvim`, and `GustavEikaas/easy-dotnet.nvim` for .NET/C#/Razor development.
 
 ---
 
@@ -135,6 +136,10 @@ The setup is organized into modular files located in your home config directory 
 *   **`ds{char}`**: Delete surrounding `char` (e.g. `ds"` removes surrounding double quotes).
 *   **`cs{old}{new}`**: Change surrounding `old` character to `new` character (e.g. `cs"'` converts double quotes to single quotes).
 
+### 8. .NET Development
+*   **`<Leader>dr`**: Run `Dotnet run` on the current project.
+*   **`<Leader>dt`**: Run `Dotnet test` on the current project.
+*   **`<Leader>dx`**: Open the integrated interactive test runner (`Dotnet testrunner`).
 
 ---
 
@@ -147,6 +152,7 @@ The following servers have been downloaded via Mason and configured to launch au
 3.  **JSON**: `jsonls`
 4.  **YAML**: `yamlls`
 5.  **Docker**: `dockerls`
+6.  **C# & Razor**: `roslyn` (Microsoft Roslyn language server) and `rzls` (Razor Language Server integration)
 
 ---
 
@@ -162,3 +168,22 @@ When editing files in your vault, you can use these custom commands:
 *   **`:ObsidianTomorrow`**: Create/open tomorrow's daily note.
 *   **`:ObsidianLink`**: Link visual selection to an existing note.
 *   **`:ObsidianLinkNew`**: Create a new note and link visual selection to it.
+
+---
+
+## 🛠️ .NET Development Setup & Prerequisites
+
+To fully use the .NET development features, you must install the following servers and tools:
+
+### 1. Roslyn Language Server (LSP)
+The Roslyn language server is installed via Mason using the community registry (Crashdummyy's registry, which is configured in this setup).
+1. Open Neovim and run `:Mason`.
+2. Find the `roslyn` language server package and install it by pressing `i` (or run `:MasonInstall roslyn`).
+
+### 2. EasyDotnet Server Tool
+`easy-dotnet.nvim` relies on the `EasyDotnet` tool for project configuration and testing commands. Install it globally in your terminal:
+```bash
+dotnet tool install -g EasyDotnet
+```
+*(If the tool is already installed but needs to be updated, run `:Dotnet _server update` within Neovim).*
+
