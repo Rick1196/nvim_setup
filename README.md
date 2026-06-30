@@ -108,7 +108,18 @@ The setup is organized into modular files located in your home config directory 
 *   **`<Leader>mp`**: Toggle Markdown Preview in the browser.
 *   **`<Leader>nf`**: Run Neoformat on current file/selection.
 
-### 4. LSP Keybindings (Active when editing code)
+### 4. Basic Editing & Text Operations
+*   **`/`**: Search forward in the current file.
+*   **`?`**: Search backward in the current file.
+*   **`:%s/old/new/g`**: Find and replace all occurrences of `old` with `new` in the file.
+*   **`u`**: Undo last change.
+*   **`y`**: Copy (yank) selected text (in Visual mode) or text defined by a motion (e.g., `yy` to copy the current line).
+*   **`d`**: Cut (delete) selected text (in Visual mode) or text defined by a motion (e.g., `dd` to cut the current line).
+*   **`viw`**: Select the word under the cursor (Visual Inner Word).
+*   **`v$`**: Select from the current cursor position to the end of the line.
+*   **`<Leader>fg`**: Search text with Telescope (Live Grep / Ripgrep).
+
+### 5. LSP Keybindings (Active when editing code)
 *   **`gd`**: Go to definition.
 *   **`gD`**: Go to declaration.
 *   **`gi`**: Go to implementation.
@@ -119,24 +130,24 @@ The setup is organized into modular files located in your home config directory 
 *   **`[d` / `]d`**: Go to previous / next diagnostic warning/error.
 *   **`<Leader>d`**: Open diagnostic detail float (popup).
 
-### 5. Obsidian Note-Taking (Active when opening markdown files in vault)
+### 6. Obsidian Note-Taking (Active when opening markdown files in vault)
 *   **`gf`**: Follow a link to another note under your cursor.
 *   **`<Leader>ch`**: Toggle checkbox markdown lists (e.g. `- [ ]` -> `- [x]`).
 
-### 6. Git Operations (Fugitive)
+### 7. Git Operations (Fugitive)
 *   **`<Leader>gs`**: Run `:Git` to show interactive Git status dashboard.
 *   **`<Leader>gd`**: Run `:Gdiffsplit` to view changes side-by-side.
 *   **`<Leader>gp`**: Run `:Git push` to push to the remote repository.
 *   **`<Leader>gl`**: Run `:Git log` to view git commit history.
 
-### 7. Jump Motion & Surrounds (Flash & nvim-surround)
+### 8. Jump Motion & Surrounds (Flash & nvim-surround)
 *   **`s`**: Activate Flash jump (type characters to highlight match labels across the screen).
 *   **`S`**: Activate Flash treesitter selection.
 *   **`ys{motion}{char}`**: Add surrounding `char` around target `motion` (e.g. `ysiw"` wraps the inner word in double quotes).
 *   **`ds{char}`**: Delete surrounding `char` (e.g. `ds"` removes surrounding double quotes).
 *   **`cs{old}{new}`**: Change surrounding `old` character to `new` character (e.g. `cs"'` converts double quotes to single quotes).
 
-### 8. .NET Development
+### 9. .NET Development
 *   **`<Leader>dr`**: Run `Dotnet run` on the current project.
 *   **`<Leader>dt`**: Run `Dotnet test` on the current project.
 *   **`<Leader>dx`**: Open the integrated interactive test runner (`Dotnet testrunner`).
